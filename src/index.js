@@ -214,9 +214,9 @@ class ServerlessLayers {
     // check if dependencies has changed comparing
     // remote package.json with local one
     let hasDepsChanged = false;
-    if (this.settings.dependencyInstall) {
+    // if (this.settings.dependencyInstall) {
       hasDepsChanged = await this.runtimes.hasDependencesChanged();
-    }
+    // }
 
     // check if something has changed
     let hasChanged = (!hasFoldersChanged && !hasDepsChanged && !hasSettingsChanged);

@@ -79,10 +79,7 @@ class NodeJSRuntime {
     let isDifferent = true;
 
     if (remotePackage) {
-      const parsedRemotePackage = JSON.parse(remotePackage);
-      const { dependencies } = parsedRemotePackage;
-      this.plugin.log('Comparing package.json dependencies...');
-      isDifferent = await this.isDiff(dependencies, this.localPackage.dependencies);
+      isDifferent = JSON.stringify(this.localPackage) !== remotePackage;
     }
 
     return isDifferent;
